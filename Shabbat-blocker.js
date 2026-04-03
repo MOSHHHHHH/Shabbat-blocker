@@ -7,9 +7,12 @@ async function checkShabbatStatus() {
     const errorMessage = 'דף זה שומר שבת, אך לא הצלחנו לברר האם שבת עכשיו';
 
     try {
-        // שליחת הבקשה ל-API
-        const response = await fetch(apiUrl);
-        
+        const response = await fetch(apiUrl, {
+            // מאלץ את הדפדפן לבדוק מול השרת אם חל שינוי,
+            // אבל מאפשר לו להשתמש במטמון (304) אם השרת מאשר שהכל זהה.
+            cache: 'no-cache'
+        });
+
         // וידוא שהתשובה תקינה
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
