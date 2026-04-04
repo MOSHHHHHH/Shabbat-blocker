@@ -1,5 +1,17 @@
+/* * עברית:
+ * אזהרה: קובץ זה אינו מוכן להפעלה בסביבת ייצור (Production).
+ * דפדפנים מודרניים חוסמים בקשות HTTP מתוך אתרים המשתמשים ב-HTTPS (Mixed Content).
+ * ה API של http://ip-api.com/ בגרסתו החינמית תומך ב-HTTP בלבד, ולכן ייחסם.
+ * יש להשתמש בחיבור מאובטח או ב-API חלופי התומך ב-HTTPS.
+ * * English:
+ * WARNING: This file is not ready for deployment.
+ * Modern browsers block HTTP requests from HTTPS-secured sites (Mixed Content).
+ * The http://ip-api.com/ API (free tier) only supports HTTP and will be blocked.
+ * Please use a secure connection or an alternative API that supports HTTPS.
+ */
 /**
- * פונקציה לבדיקת סטטוס הגבלת פעילות וחסימת הדף בהתאם למיקום המשתמש
+ * 
+ פונקציה לבדיקת סטטוס הגבלת פעילות וחסימת הדף בהתאם למיקום המשתמש
  */
 async function checkShabbatStatus() {
     const ipApiUrl = 'http://ip-api.com/json/';
